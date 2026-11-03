@@ -1,3 +1,10 @@
+mod cli;
+
+use clap::Parser;
+use cli::parser::Cli;
+
 fn main() {
-    println!("Hello, world!");
+    let todo = Cli::parse();
+
+    todo.command.go()
 }
