@@ -19,26 +19,11 @@ pub struct Add {
     pub message: Option<String>,
 }
 
-impl Command {
-    pub fn go(&self) -> () {
-        match self {
-            Command::Add(add) => println!("{}", add.summary()),
-        }
-    }
-}
-
 impl Add {
-    pub fn summary(&self) -> String {
-        format!("{}{}", self.label_to_string(), self.message_to_string())
+    pub fn get_label(&self) -> String {
+        self.label.clone()
     }
-
-    fn label_to_string(&self) -> String {
-        format!("Added \"{}\"", self.label)
-    }
-    fn message_to_string(&self) -> String {
-        format!(
-            "\n  └─ note: {:?}",
-            self.message.clone().unwrap_or_default()
-        )
+    pub fn get_message(&self) -> Option<String> {
+        self.message.clone()
     }
 }

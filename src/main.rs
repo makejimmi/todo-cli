@@ -1,11 +1,13 @@
+mod app;
 mod cli;
 mod model;
 
+use crate::app::run::run;
 use clap::Parser;
 use cli::parser::Cli;
 
 fn main() {
-    let todo = Cli::parse();
+    let cli = Cli::parse();
 
-    todo.command.go()
+    run(cli.command);
 }
