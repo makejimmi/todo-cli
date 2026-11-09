@@ -10,8 +10,8 @@ use cli::parser::Cli;
 fn main() {
     let cli = Cli::parse();
 
-    if let Err(msg) = run(cli.command) {
-        eprintln!("error: {msg}");
-        std::process::exit(1);
+    match run(cli.command) {
+        Ok(msg) => println!("{}", msg),
+        Err(e) => println!("{}", e),
     };
 }
