@@ -7,11 +7,11 @@ pub struct Cli {
     pub command: Command,
 }
 
-#[derive(Subcommand, Debug)]
+#[derive(Subcommand, Debug, Clone)]
 pub enum Command {
     Add(Add),
 }
-#[derive(Args, Debug)]
+#[derive(Args, Debug, Clone)]
 pub struct Add {
     pub label: String,
 
