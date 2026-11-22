@@ -12,11 +12,11 @@ impl Item {
         }
     }
 
-    fn get_label(&self) -> String {
+    pub fn get_label(&self) -> String {
         self.label.clone()
     }
 
-    fn get_message(&self) -> Option<String> {
+    pub fn get_message(&self) -> Option<String> {
         self.message.clone()
     }
 
